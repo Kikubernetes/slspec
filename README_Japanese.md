@@ -10,7 +10,7 @@
 
 ### 必要なライブラリ
 
-パンダ
+pandas
 
 ### 手順
 
@@ -18,4 +18,4 @@
 2. 2.jsonファイルをこのノートブックと同じフォルダに置くか、パスを指定して下さい。
 3. すべてのセルを実行すると、ノートブックのあるフォルダにslspecファイルが作成されます。
 
-jsonファイルには'SliceTiming'が記載されている必要があることにご注意ください。記載がない場合はその段階で処理を終了し、"Sorry, this json file doesn't have slice timing. Exitted and succeeding process was skipped"と表示されます。
+jsonファイルには'SliceTiming'が記載されている必要があります。記載がない場合は途中で処理を終了し、"Sorry, this json file doesn't have slice timing. Exitted and succeeding process was skipped"と表示されます。

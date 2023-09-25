@@ -17,4 +17,4 @@ pandas
 2. Put your json file in the same folder as this notebook's, or specify its path.
 3. Now run all the cells and the slspec file will be created in the folder where the notebook is located.
 
-Note that the json file must contain 'SliceTiming'.
+Note that your json file is expected to contain 'SliceTiming'.

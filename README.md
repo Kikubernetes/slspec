@@ -13,8 +13,8 @@ pandas
 
 ### Instructions
 
-1. Replace the json file name 'DWI.json' in the first cell with your json file name.
-2. Put your json file in the same folder as this notebook's, or specify the path.
+1. Replace the 'DWI.json' in the 2nd cell with your json file 's name.
+2. Put your json file in the same folder as this notebook's, or specify its path.
 3. Now run all the cells and the slspec file will be created in the folder where the notebook is located.
 
 Note that the json file must contain 'SliceTiming'.

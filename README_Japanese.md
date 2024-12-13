@@ -3,7 +3,6 @@
 ### 概要  
 このリポジトリでは、FSLの`eddy --mporder`オプションを使用してMRIデータの体動補正に必要な`slspec`ファイルを自動生成するツールを提供しています。`slspec`ファイルは、スキャン時にスライスまたはマルチバンド（MB）グループがどのように取得されたかを定義します。詳細については、[FSLのドキュメント](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/eddy/users_guide/index?id=-jsonfilename-or-slspecfilename)をご参照ください。
 
-（最近のFSLバージョンを使用している場合は、`--json`オプションを使用してJSONファイルを直接利用することもできます。詳しくは上記のドキュメントをご覧ください。）
 
 ---
 

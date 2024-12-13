@@ -1,21 +1,32 @@
 # slspec
 
-### 要約
+### 概要  
+このリポジトリでは、FSLの`eddy --mporder`オプションを使用してMRIデータの体動補正に必要な`slspec`ファイルを自動生成するツールを提供しています。`slspec`ファイルは、スキャン時にスライスまたはマルチバンド（MB）グループがどのように取得されたかを定義します。詳細については、[FSLのドキュメント](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/diffusion/eddy/users_guide/index?id=-jsonfilename-or-slspecfilename)をご参照ください。
 
-[slspec ファイル](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide#A--slspec:~:text=%2D%2D-,slspec,-Specifies%20a%20text) は、MRI のスライス/MB nのグループがどのように取得されたかを記載したファイルです。これは、[FSL の eddy --mporder オプション](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/eddy/UsersGuide#A--slspec:~:text=the%20next%20release.-,%2D%2Dmporder,-If%20one%20wants) を使ってボリューム内の体動を補正するのに必要です。詳しくはFSLのウェブサイトをご覧ください。
+（最近のFSLバージョンを使用している場合は、`--json`オプションを使用してJSONファイルを直接利用することもできます。詳しくは上記のドキュメントをご覧ください。）
 
-このjupyter-notebookは、dcm2nixを使ってdicom画像を変換したときにできるjsonファイルを使って、自動的にslspecテキストファイルを作成します。
+---
 
-マルチバンド1（マルチバンドなし）からマルチバンド8まで対応しています。GEとSiemensのマルチバンド1,2,4,8で動くことを確認していますが、うまく動作しない場合はIssueでご連絡ください。
+### 特徴  
+このJupyter Notebookは、`dcm2niix`がDICOMからNIfTIに変換する際に生成するJSONファイルから`slspec`テキストファイルを作成します。
 
-### 必要なライブラリ
+- マルチバンドMB1（マルチバンドなし）からMB8（マルチバンド8）までの取得をサポートしています。
+- GEおよびSiemensのMB1、MB2、MB4、MB8のデータセットでテスト済みです。
+- うまくいかない場合はissueでフィードバックをお願いします。
 
-pandas
+---
 
-### 手順
+### 必要なライブラリ  
+Pythonライブラリ：`pandas`
 
-1. 最初のセルのjsonファイル名'DWI.json'をご自分のjsonファイル名に置き換えてください。
-2. 2.jsonファイルをこのノートブックと同じフォルダに置くか、パスを指定して下さい。
-3. すべてのセルを実行すると、ノートブックのあるフォルダにslspecファイルが作成されます。
+---
 
-jsonファイルには'SliceTiming'が記載されている必要があります。記載がない場合は途中で処理を終了し、"Sorry, this json file doesn't have slice timing. Exitted and succeeding process was skipped"と表示されます。
+### 使用方法  
+
+1. このリポジトリをクローンするか、ノートブック「slspec-multiband.ipynb」をダウンロードしてください。Google Colabで開く場合は、「Open in Colab」ボタンをクリックしてください。  
+1. ノートブックの2番目のセルで、`DWI.json`を使用するJSONファイルの名前に置き換えてください。  
+(JSONファイルをノートブックと同じディレクトリに配置するか、パスを指定してください。)   
+1. すべてのセルを実行すると、ノートブックが配置されているフォルダに`slspec`ファイルが作成されます。
+
+**注意**：JSONファイルには`SliceTiming`フィールドが含まれている必要があります。
+
